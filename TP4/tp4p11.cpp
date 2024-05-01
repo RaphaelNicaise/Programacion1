@@ -2,17 +2,13 @@
 imprima en la consola una matriz cuadrada con la diagonal principal compuesta por números 
 en forma ascendente hasta ese valor y los demás elementos de la matriz iguales a cero. Por 
 ejemplo, si el usuario ingresa el número 6, la matriz resultante debe ser la siguiente: 
-
 1 0 0 0 0 0
 0 2 0 0 0 0
 0 0 3 0 0 0
 0 0 0 4 0 0
 0 0 0 0 5 0
 0 0 0 0 0 6
-
-
 */
-
 #include <iostream>
 using namespace std;
 int main() {
