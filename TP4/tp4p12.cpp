@@ -16,17 +16,17 @@ int main() {
     numeroAdivinar = rand() % 100 + 1;
     // cout << numeroAdivinar<<endl; para visualizar numero en pruebas
     while(true) { // el loop se cierra cuando se ejecute el break
-    cout << "Ingrese un numero para adivinar: ";cin >> numeroIngresado;
-    if (numeroAdivinar>numeroIngresado) {
-        cout << "El numero secreto es mayor a "<<numeroIngresado<<endl;
-    } else if (numeroAdivinar<numeroIngresado) {
-        cout << "El numero secreto es menor a "<<numeroIngresado<<endl;
-    } else { // numeroIngresado==NumeroAdivinar y termina
-        cout << "Adivinaste el numero! \n";
-        intentos++; // suma uno ya que cuando pegas la opcion tambien cuenta como intento
-        break;
-    }
-    intentos++;
+        cout << "Ingrese un numero para adivinar: ";cin >> numeroIngresado;
+        if (numeroAdivinar>numeroIngresado) {
+            cout << "El numero secreto es mayor a "<<numeroIngresado<<endl;
+        } else if (numeroAdivinar<numeroIngresado) {
+            cout << "El numero secreto es menor a "<<numeroIngresado<<endl;
+        } else { // numeroIngresado==NumeroAdivinar y termina
+            cout << "Adivinaste el numero! \n";
+            intentos++; // suma uno ya que cuando pegas la opcion tambien cuenta como intento
+            break;
+        }
+        intentos++;
     }
     cout << "Adivinaste en el intento: "<<intentos<<endl;
 }
