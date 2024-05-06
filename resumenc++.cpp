@@ -218,8 +218,9 @@ int main() {
     int FILAS=5,COLUMNAS=5;
     for (int i=1;i<=FILAS;i++){
         for (int j=1;j<=COLUMNAS;j++) {
-            (i==j) ? cout<<j:cout<<0;  // cuando fila igual a columna entonces j, sino 0         
+            (i==j) ? cout<<j : cout<<0;  // cuando fila igual a columna entonces j, sino 0         
         }
         cout << endl;
     }
+    
 }
