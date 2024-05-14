@@ -10,10 +10,6 @@ int main() {
     cout << "Ingrese nota 3:"; cin >> n3;
     n_final = (n1+n2+n3)/3;
     Aprobado = (n_final >= 7);
-    if (Aprobado) {
-        cout << "Aprobado";
-    } else {
-        cout << "Desaprobado";
-    }
+    (Aprobado) ? cout << "Aprobado" : cout << "Desaprobado";
     return 0;
 }
