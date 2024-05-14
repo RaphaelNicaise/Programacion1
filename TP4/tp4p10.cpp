@@ -14,12 +14,7 @@ int main()  {
     cout << "Ingrese medida del cuadrado de (*): ";cin >> n;
     for (int i=1;i<=n;i++) { // i fila
         for(int j=1;j<=n;j++) { // j columna
-           if (i==1 || j==1 || i==n || j==n ) { // fila 1 o fila n o col 1 o col n
-              cout<<" * ";    
-           } else {
-              cout<<"   ";
-           } 
-           // (i==1 || j==1 || i==n || j==n ) ? cout<<" * ": cout<<"   ";   
+           (i==1 || j==1 || i==n || j==n ) ? cout<<" * ": cout<<"   ";   
         }
         cout << endl << endl;
     }

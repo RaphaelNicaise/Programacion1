@@ -15,6 +15,6 @@ int main() {
         } 
         i++;
     }
-    primo ? cout<<num<<" es Primo.":cout<<num<<" no es Primo.";
+    primo ? cout << num<<" es Primo.":cout << num <<" no es Primo.";
 }
     
