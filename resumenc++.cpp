@@ -196,6 +196,29 @@ int main() {
         cout << contador << endl;
         contador++;
     } while (contador <= 10);
+
+    // IDEAL PARA MENUS EL DO WHILE
+    int opcion;
+    do {
+        cout<<"1 - SubPrograma1\n";
+        cout<<"2 - SubPrograma2\n";
+        cout<<"3 - SubPrograma3\n";
+        cout<<"4 - Salir del programa\n";
+        cin >> opcion;
+        /*
+        lOGICA DE PROGRAMACION CON SWITCHS
+        */
+       switch(opcion) {
+        case 1: {cout<<"Logica1\n";break;} // EL BREAK SALE DEL SWITCH, SI NO SE SIGUEN EJECUTANDO 
+        case 2: {cout<<"Logica2\n";break;} 
+        case 3: {cout<<"Logica3\n";break;}
+        case 4: {cout<<"Termina programa\n";break;} // tambien se puede poner return 0 y en el while (true)
+        default: {cout<<"Opcion incorrecta\n";} // cuando no es ninguna de las opciones
+       }
+    } while (opcion != 4);
+    
+    
+    
     
     // CICLO FOR
     for (int i = 0; i < 10; i++) // for (inicializacion; condicion; incremento)
@@ -207,6 +230,10 @@ int main() {
     srand(time(NULL)); // inicializar semilla para generar numeros aleatorios
     int numeroAdivinar, numeroIngresado, intentos = 0;
     numeroAdivinar = rand() % 100 + 1; // genera un numero aleatorio entre 1 y 100
+    // rand() numero cualquiera
+    // rand() % 100 numero entre 0 y 99
+    // rand() % 2 numero entre 0 y 1
+    // rand() % N osea de 0 a N-1 (+!) -> rand() % 100 + 1 -> 1 a 100
 
     string palabra;
     cout << palabra[0]; // muestra primera letra de la palabra
@@ -222,5 +249,10 @@ int main() {
         }
         cout << endl;
     }
+
+    // ARRAYS RESUMEN
+    
+    
+
     
 }
