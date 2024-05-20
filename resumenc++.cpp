@@ -12,7 +12,7 @@ int main() {
     // SEMANTICA significado de cada ELEMENTO en un lenguaje de programacion
     // como declarar variables (a-z A-Z _ 0-9)
 
-//  tipo variables
+/* tipo de datos */  
     int numero,numero1 = 10; // se declara y no se inicializa, se declara y se inicializa. val maximo 2^31-1 N
     numero = 10; // se inicializa variable declarada 
     float  numero2 = 10.5; // se declara y se inicializa val maximo 2^31-1 R
@@ -20,9 +20,11 @@ int main() {
     double numero4 = 10.5; // val maximo 2^63-1 N y R
     char   letra = 'a'; // se declara el caracter' '
     string palabra = "hola"; // se declara y se inicializa el string ""
-    
+    enum dias {LUNES,MARTES,MIERCOLES,JUEVES,VIERNES,SABADO,DOMINGO}; // se declara y se inicializa el enum. Def por usuario
     double d,f;
-    d = 10.5; f = 5.3; 
+    d = 10.5; f = 5.3;
+    int arreglo[5]; // se declara un array de 5 elementos
+
     /* 
        [mosificadores] tipo nombre_Varialbe = valor
        unsigned int -> doble alcance de int de 0 a 2^32-1
@@ -250,9 +252,66 @@ int main() {
         cout << endl;
     }
 
+    typedef enum {LUNES,MARTES,MIERCOLES,JUEVES,VIERNES,SABADO,DOMINGO} dias; // crear alias de un tipo de dato 
+    dias dia; // se declara la variable dia de tipo de dato dias
+    typedef int entero; // crear alias de un tipo de dato
+    entero numero; // se declara la variable numero de tipo de dato entero (Entero hace referencia al datatype INT)
+    // TAMBIEN SE SUELE USAR
+    
+    typedef int entero;  /* <-> */ using entero = int; // crear alias de un tipo de int
+                                   entero numero; /* se declara la variable numero de tipo de 
+                                                    dato entero (Entero hace referencia al datatype INT)*/
+    
     // ARRAYS RESUMEN
-    
-    
+    // tipo nombre_tipo[tamaño];
 
+    int ventas[5]={1,2,3,4,5}; // se declara un array de 5 elementos int array[N] N variables de tipo INT. de 1 a N (n espacios)
+    // indices     0 1 2 3 4   de 0 a N-1
+    ventas[0]=100; // a indice 0 se le asigna el valor 100
+    cout << ventas[0]; // muestra el primer elemento del array
     
+    for (int i=0;i<5;i++) { 
+        ventas[i]=i; 
+        cout << ventas[i] << endl;}
+
+    // existen matrices homogeneas (1 datatype) o heterogeneas (varios datatypes)
+
+    // nombres de tipos con una t minuscula
+    
+    // Manejo Vectores
+    const int N = 10;
+    int vector[N]; // array dinamico que puede crecer o decrecer
+
+    typedef int tVector[N]; // se crea un alias de un array de N elementos
+    typedef double tTemp[7];
+    typedef short int tMes[12];
+    typedef double tVentas[31];
+    typedef char tVocales[5]; // variable array de 5 ranuras
+    tVocales vocales={'a','e','i','o','u'}; // vocales[0]=? vocales[1]=? vocales[2]=? vocales[3]=? vocales[4]=?
+     
+    // no se puede copiar array1 = array2
+    // se tiene que hacer asi
+    for (int i = 0;i<N;i++) {
+     // array1[i] = array2[i];
+    }
+
+    // si hay menos valores que elementos, los restantes por default se colocan en 0
+
+// RECORRER MATRIZ
+int filas,columnas;
+int matriz[filas][columnas];
+for (int i = 0;i<filas;i++) {
+        for (int j=0;j<columnas;j++) {
+            cout << matriz[i][j] << " ";
+        }
+        cout << endl;
+    }
+// RECORRER POR CADA ELEMENTO DENUEVO TODOS LOS ELEMENTOS
+for (int i= 0;i<filas;i++) {
+        for (int j=0;j<columnas;j++) {
+            for (int k = 0; k < filas; k++) { // por cada elemento del array, volvemos a recorrer todo
+                for (int l = 0; l < columnas; l++) {
+                }}}}
+// BUSQUEDA EN MATRIZ
+// while((i < NUM) && !encontrado) {}
 }
