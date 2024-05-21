@@ -47,7 +47,7 @@ int main() {
             cout << "Cierra programa";
             break;
         }
-        while (true) {
+        
             for (int i=0;i<10;i++){
                 for (int j=0;j<10;j++){
                     if (mtx[i][j]==num) {
@@ -60,8 +60,7 @@ int main() {
                 }
                 if(encontrado) break;
             }
-            if(encontrado) break;
-        }
+            
         if(encontrado) {
             cout << "El numero "<<num<<" se encontro en la fila "<<i_num<<" columna "<<j_num;
             break;
