@@ -232,10 +232,8 @@ int main() {
     srand(time(NULL)); // inicializar semilla para generar numeros aleatorios
     int numeroAdivinar, numeroIngresado, intentos = 0;
     numeroAdivinar = rand() % 100 + 1; // genera un numero aleatorio entre 1 y 100
-    // rand() numero cualquiera
-    // rand() % 100 numero entre 0 y 99
-    // rand() % 2 numero entre 0 y 1
-    // rand() % N osea de 0 a N-1 (+!) -> rand() % 100 + 1 -> 1 a 100
+    // Ej 53 a 117 -> restamos extremos M-m y nos da el porcentaje al que le sumamos 1, y a eso le sumanos el extremo menor.
+    // rand() % 64+1 + m
 
     string palabra;
     cout << palabra[0]; // muestra primera letra de la palabra
@@ -280,14 +278,14 @@ int main() {
     
     // Manejo Vectores
     const int N = 10;
-    int vector[N]; // array dinamico que puede crecer o decrecer
+    int vector[N]; // array dinamico que puede crecer o decrecer ARRAY=VECTOR
 
     typedef int tVector[N]; // se crea un alias de un array de N elementos
     typedef double tTemp[7];
     typedef short int tMes[12];
     typedef double tVentas[31];
     typedef char tVocales[5]; // variable array de 5 ranuras
-    tVocales vocales={'a','e','i','o','u'}; // vocales[0]=? vocales[1]=? vocales[2]=? vocales[3]=? vocales[4]=?
+    tVocales vocales={'a','e','i','o','u'}; // vocales[0]='a' vocales[1]='e' vocales[2]='i' vocales[3]='o' vocales[4]='u
      
     // no se puede copiar array1 = array2
     // se tiene que hacer asi
@@ -312,6 +310,45 @@ for (int i= 0;i<filas;i++) {
             for (int k = 0; k < filas; k++) { // por cada elemento del array, volvemos a recorrer todo
                 for (int l = 0; l < columnas; l++) {
                 }}}}
+
+
+int n=6,arr[n][n];
+for (int i=0;i<n;i++){
+        // si indice de fila es par reccorer de izquierda a derecha, sino de derecha a izquierda
+        if(i%2==0){
+            for (int j=0;j<n;j++){// RECORRER FILA FIJA DE IZQUIERDA A DERECHA
+                cout << arr[i][j] << ' '; 
+            }
+        } else {
+            for (int j=n-1;j>=0;j--){ // RECORRER FILA FIJA DE DERECHA A IZQUIERDA
+                cout << arr[i][j] << ' ';
+            }
+        }
+        cout << endl;
+    }
+
 // BUSQUEDA EN MATRIZ
-// while((i < NUM) && !encontrado) {}
+/* while((i < NUM) && !encontrado) {
+    if (alguna condicion){
+        encontrado=true; // va a terminar el while
+    }
+} */
+
+string cad1="Hola";
+string cad2="Pepe";
+// LAS CADENAS DE TEXTO SE PUEDEN RECORRER COMO MATRICES
+cout << cad1[1]; // muestra la letra o 
+cad1.swap(cad2); // Intercambia cad1 -> <- cad2 
+int len=cad1.length(); //Devuelve cantidad de caracteres Hola -> 4 H,o,l,a 
+int len=cad1.size(); // Devuelve la cantidad de caracteres
+cad1.at(0); // devuelve el caracter en la posicion 0
+cad1[0]; // devuelve el caracter en la posicion 0
+cad1.substr(0,2); // devuelve los caracteres desde la posicion 0 hasta la 2
+cad1.find("la"); // devuelve la posicion de la primera ocurrencia de "la"
+cad1.rfind("la"); // devuelve la posicion de la ultima ocurrencia de "la"
+cad1.erase(0,2); // borra los caracteres desde la posicion 0 hasta la 2
+cad1.insert(3,"la"); // inserta "la" en la posicion 3
+
+return 0; // cierra el programa | 0 -> todo salio bien | 1 -> hubo un error
 }
+

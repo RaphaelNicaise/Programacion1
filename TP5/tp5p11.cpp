@@ -7,8 +7,8 @@ de 0.*/
 #include <cmath>
 using namespace std;
 int main() {
-    typedef const int cint;
-    cint f=3,c=3;
+    typedef const int tCint;
+    tCint f=3,c=3;
     float mtx[f][c]; 
     for (int i=0;i<f;i++){
         for (int j=0;j<c;j++){
