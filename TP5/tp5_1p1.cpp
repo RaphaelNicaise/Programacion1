@@ -35,15 +35,14 @@ int main() {
                     if (!(i==k & j==l) && matriz1[i][j]==matriz1[k][l]) { 
                         // que los indices sean distintos  y el valor del elemento comparado sea igual
                         repetido = true;
-                        break;
                     }
                     
                 }
-                if (repetido) break;
+                
             }
-            if (repetido) break; // los break son porque ya no nos sirve seguir comparando
+             // los break son porque ya no nos sirve seguir comparando
         }
-        if (repetido) break;
+        
     }
     repetido ? cout << "Existen valores repetidos" : cout << "No existen valores repetidos";
     return 0;
