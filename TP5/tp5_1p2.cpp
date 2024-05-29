@@ -15,8 +15,8 @@ int main() {
     }
     int matriz[4][4];
     int contador = 0;
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
+    for (int i=0;i<4;i++) {
+        for (int j=0;j<4;j++) {
             matriz[i][j]=numeros[contador];
             contador++;
         }
