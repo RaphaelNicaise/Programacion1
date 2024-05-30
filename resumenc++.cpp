@@ -347,6 +347,60 @@ cad1.find("la"); // devuelve la posicion de la primera ocurrencia de "la"
 cad1.rfind("la"); // devuelve la posicion de la ultima ocurrencia de "la"
 cad1.erase(0,2); // borra los caracteres desde la posicion 0 hasta la 2
 cad1.insert(3,"la"); // inserta "la" en la posicion 3
+// ALGORITMOS DE ORDENACION
+// comparando los numeros internos.
+// array[i] <= array[i+1] lo compara con el siguiente para ordenar de menor a mayor
+// array[i] >= arrai[i+1] lo compara con el siguiente para ordenar de mayor a menor
+// Ordenacion por insercion
+/*{14,3,4,2,5,1}
+  {3,14,4,2,5,1}
+  {3,4,14,2,5,1}
+  {2,3,4,14,5,1}
+  {2,3,4,5,14,1}
+  {1,2,3,4,5,14} */ 
+int nuevo,pos;
+int array[N]={14,3,4,2,5,1};
+// desde segundo elemento hasta el ultimo
+for (int i=1;i<N;i++) {
+    nuevo = array[i];
+    pos = 0;
+    while ((pos<1) && (array[pos]>nuevo)) {
+        pos++;
+    }
+    // pos indice del primer mayor
+    for (int j=i;j>pos;j--) {
+        array[j] = array[j-1];
+    }
+    array[pos] = nuevo;
+}
+// ordenamiento ordenacion por intercambio
+int tmp,pos;
+int lista[5];
+for (int i=1;i<N;i++) {
+    pos = i;
+    while ((pos > 0)&&(lista[pos-1]>lista[pos])){ // > ordena de menor a mayor, < ordena de mayor a menor
+        tmp = lista[pos];
+        lista[pos] = lista[pos-1];
+        lista[pos-1] = tmp;
+        pos--;
+    }
+}
+
+// metodo de seleccion directa
+// seleccionar el siguiente elemento menor de los que queden
+for (int i=0;i<N-1;i++) {
+    int menor = i;
+    for (int j=i+1;j<N;j++) {
+        if (lista[j]<lista[menor]) {
+            menor = j;
+        }
+    }
+    if (menor > i) { // > ordena de menor a mayor, < ordena de mayor a menor
+        int tmp = lista[i];
+        lista[i] = lista[menor];
+        lista[menor] = tmp;
+    }
+}
 
 return 0; // cierra el programa | 0 -> todo salio bien | 1 -> hubo un error
 }
