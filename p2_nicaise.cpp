@@ -11,12 +11,10 @@ void menu() { // MOSTRAMOS MENU CON LAS OPCIONES
     cout << "6 - Salir del programa\n";  
     cout << "Seleccione una opcion: ";
 }
-
-
 void CargarMatriz(int matriz[3][3]) { // A cargar matriz le ingresamos la matriz vacia a cargar
     srand(time(NULL));
     int opcionCargar;
-    do { // desplegamos el menu esperando que el usuario elija entre las dos opciobnes
+    do { //  menu interno para que el usuario elija de que manera cargar la matriz
         cout << "  1 - Cargar Matriz aleatoriamente de 1 a 100\n";
         cout << "  2 - Cargar Matriz de forma manual\n";
         cout << "  Seleccione una opcion para cargar matriz: ";cin >> opcionCargar;
@@ -53,7 +51,7 @@ void mostrarMatriz(int matriz[3][3],bool matrizCargada) {  // Le ingresamos la m
 void buscarValor (int matriz[3][3],bool matrizCargada) { 
     bool encontrado = false;                            
     int numero,contador=0;
-    if (matrizCargada) {
+    if (matrizCargada) { // verificamos si matriz esta cargada
         cout << "Ingresar numero para buscarlo en la matriz: ";cin >> numero;
         for (int i=0;i<3;i++){
             for (int j=0;j<3;j++){
@@ -61,6 +59,8 @@ void buscarValor (int matriz[3][3],bool matrizCargada) {
                     encontrado = true;
                     cout << "El numero "<<numero<<" esta en el indice ["<<i<<"]["<<j<<"]\n";
                     contador++;
+                    // Buscamos el valor y si esta hacemos el cout, encontrado=true y sumamos el contador
+                    // El contador esta puesto para saber cuantas veces aparece el numero en la matriz
                 }
             }
         }
@@ -70,32 +70,34 @@ void buscarValor (int matriz[3][3],bool matrizCargada) {
             cout << "El numero "<<numero<<" no se encuentra en la matriz\n";
         }
     } else {
-        cout << "No se puede buscar valor en la matriz ya que no esta cargada\n";
+        cout << "No se puede buscar valor en la matriz ya que no esta cargada\n"; // En caso que matriz no esta cargada
     }
 }
 void devolverMaximoMinimo (int matriz[3][3],bool matrizCargada) {
     int maximo,minimo,opcionDevolver;
     
-    if (matrizCargada){
-        do {
+    if (matrizCargada){ //Chequeo si la matriz esta cargada
+        do { // menu interno
             cout << "  1 - Devolver valor maximo de la matriz\n";
             cout << "  2 - Devolver valor minimo de la matriz\n";
             cout << "Seleccione una opcion para devolver maximo/minimo: ";cin >> opcionDevolver;
         } while (opcionDevolver != 1 && opcionDevolver != 2);
         if (opcionDevolver==1){
-            maximo = 0;
+            maximo = 0; // maximo arranca desde 0  
             for (int i=0;i<3;i++){
                 for (int j=0;j<3;j++){
                     if (maximo < matriz[i][j]) maximo = matriz[i][j];
+                    // por cada iteracion, cada numero que cumpla la condicion de maximo <matriz[i][j] va a ir actualizando maximo
                 }
             }
             cout << "El valor maximo es: "<<maximo<<endl;
             
         } else {
-            minimo = 100;
+            minimo = 100; // minimo arranca desde 0
             for (int i=0;i<3;i++){
                 for (int j=0;j<3;j++){
                     if (minimo > matriz[i][j]) minimo = matriz[i][j];
+                    // por cada valor que cumpla la condicion, la variable minimo se actualiza por matriz[i][j]
                 }
             }
             cout << "El valor minimo es: "<<minimo<<endl;
@@ -107,7 +109,7 @@ void devolverMaximoMinimo (int matriz[3][3],bool matrizCargada) {
 void ordenarMatriz(int matriz[3][3],bool matrizCargada){
     int opcionOrdenar;
     if (matrizCargada){
-        do {
+        do { // menu interno para elegir orden descendente o ascendente
             cout << "Ordenar matriz de forma: \n";
             cout << "  1 - Ascendente \n";
             cout << "  2 - Descendente\n";
