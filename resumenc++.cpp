@@ -383,6 +383,7 @@ for (int i=1;i<N;i++) {
         lista[pos] = lista[pos-1];
         lista[pos-1] = tmp;
         pos--;
+        
     }
 }
 
@@ -399,8 +400,36 @@ for (int i=0;i<N-1;i++) {
         int tmp = lista[i];
         lista[i] = lista[menor];
         lista[menor] = tmp;
+        // funcion swap
+    
     }
 }
+//BOOBLE SORT | BURBUJA
+// comparar los elementos adyacentes e intercambiarlos si estan en el orden equivocado
+// repetir hasta que no se necesiten mas intercambios
+
+
+
+swap(lista[pos],lista[pos-1]); // funcion swap intercambia dos valores sin necesidad de variable temporal
+
+// FUNCIONES 
+// tipo nombre_funcion(parametros) {cuerpo de la funcion}
+// tipo nombre_funcion() {cuerpo de la funcion}
+// tipo_valor nombre_funcion(parametros) {cuerpo de la funcion; return valor;}
+// void no devuelve nada, solo hace cosas dentro de la funcion
+// llamamos a las funciones en el main
+// el void no lleva return, porque no retorna ningun valor, solo realiza acciones, cambiar variables por ej.
+// int& NUM como parametro, si retornamos NUM, va a cambiar ese valor.
+void llenar(int arr[],int cant){
+    for (int i=0;i<cant;i++){
+        cout << "Ingrese un numero: "; cin >> arr[i];
+    }
+}
+// despues en el main llamas a la funcion llenar(arr,5); arr sin corchetes porq ya sabemos q es arreglo
+// PROTOTIPOS DE FUNCIONES
+// tipo nombre_funcion(parametros);
+// main()...                                                        esto es para poder tener el main arriba
+// tipo nombre_funcion(parametros) {cuerpo de la funcion}
 
 return 0; // cierra el programa | 0 -> todo salio bien | 1 -> hubo un error
 }
