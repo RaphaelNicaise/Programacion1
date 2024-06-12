@@ -64,7 +64,7 @@ void OrdInsercion(int arr[],int n){
     for (int i=0;i<n;i++) {
         pos=i;
         aux= arr[i];  
-        while ((pos>0) && (arr[pos-1]> aux)) {
+        while ((pos>0) && (arr[pos-1]< aux)) {
             arr[pos] = arr[pos - 1]; 
             pos--;
         }
@@ -75,7 +75,7 @@ void OrdInsercionIntercambios(int arr[],int n){
     int tmp,pos;
     for (int i=1;i<n;i++) {
         pos = i;
-        while ((pos > 0)&&(arr[pos-1]>arr[pos])){ 
+        while ((pos > 0)&&(arr[pos-1]<arr[pos])){ 
             tmp = arr[pos];
             arr[pos] = arr[pos-1];
             arr[pos-1] = tmp;
@@ -89,7 +89,7 @@ void OrdSeleccionDirecta(int arr[],int n){
         menor = arr[i];
         x = i;
         for (int j = i; j < n; ++j){
-            if (arr[j] < menor){
+            if (arr[j] > menor){
                 menor = arr[j];
                 x = j;
             }
@@ -102,7 +102,7 @@ void OrdBurbuja(int arr[],int n){
     int temp;
     for (int i = 0; i < n-1; i++){
         for (int j = 0; j < n-1; j++){
-            if (arr[j] > arr[j+1]){
+            if (arr[j] < arr[j+1]){
                 temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
