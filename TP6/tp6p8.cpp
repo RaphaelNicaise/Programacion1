@@ -4,7 +4,9 @@ intercambie entre sí.*/
 #include <iostream>
 #include <string>
 using namespace std;
+
 void intercambiar(string &str1,string &str2);
+
 int main(){
     string str1,str2;
     cout << "Ingrese string 1: ";cin >> str1;
