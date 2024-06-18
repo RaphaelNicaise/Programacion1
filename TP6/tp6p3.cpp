@@ -88,7 +88,7 @@ void OrdSeleccionDirecta(int arr[],int n){
     for (int i = 0; i < n-1; ++i){
         menor = arr[i];
         x = i;
-        for (int j = i; j < n; ++j){
+        for (int j = i + 1; j < n; ++j){
             if (arr[j] > menor){
                 menor = arr[j];
                 x = j;
